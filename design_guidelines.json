@@ -1,0 +1,110 @@
+{
+  "theme": "Dark and Light (Primary Dark)",
+  "archetype": "Archetype 5: Jewel & Luxury (Tech Edition)",
+  "vibe": "Apple-style, Glassmorphism, Premium Audio, Magical Enhancement",
+  "colors": {
+    "dark": {
+      "background": "#050505",
+      "surface": "rgba(255, 255, 255, 0.03)",
+      "surface_border": "rgba(255, 255, 255, 0.08)",
+      "text_primary": "#FFFFFF",
+      "text_secondary": "#A1A1AA",
+      "accent_primary": "#FF5E00",
+      "accent_secondary": "#E0004D",
+      "glass_bg": "rgba(10, 10, 12, 0.6)",
+      "glass_border": "rgba(255, 255, 255, 0.08)"
+    },
+    "light": {
+      "background": "#FAFAFA",
+      "surface": "#FFFFFF",
+      "surface_border": "rgba(0, 0, 0, 0.08)",
+      "text_primary": "#050505",
+      "text_secondary": "#52525B",
+      "accent_primary": "#FF5E00",
+      "accent_secondary": "#E0004D",
+      "glass_bg": "rgba(255, 255, 255, 0.7)",
+      "glass_border": "rgba(0, 0, 0, 0.05)"
+    }
+  },
+  "typography": {
+    "headings": {
+      "family": "Outfit",
+      "sizes": {
+        "h1": "text-5xl lg:text-6xl tracking-tighter font-medium",
+        "h2": "text-3xl lg:text-4xl tracking-tight font-medium"
+      }
+    },
+    "metrics": {
+      "family": "JetBrains Mono",
+      "sizes": {
+        "value": "text-4xl lg:text-5xl tracking-tight font-light",
+        "label": "text-xs uppercase tracking-[0.2em] font-bold"
+      }
+    },
+    "body": {
+      "family": "Manrope",
+      "sizes": {
+        "base": "text-base leading-relaxed"
+      }
+    }
+  },
+  "surfaces": {
+    "navbar": "Glassmorphism: backdrop-blur-2xl bg-black/60 (dark) or bg-white/70 (light), 1px bottom border",
+    "cards": "Neumorphism mix: 1px border, soft ambient shadow, flat background, heavy corner radius (rounded-3xl)",
+    "audio_visualizer": "Crystal Glass: heavy blur, saturated background behind it to create an Apple-style vibrant blur."
+  },
+  "animations": {
+    "library": "framer-motion",
+    "physics": "stiffness: 400, damping: 25 (Apple spring style)",
+    "interactions": {
+      "hover": "scale 1.02, subtle brightness increase",
+      "click": "scale 0.96",
+      "record_active": "pulsing radial glow, organic breathing scale",
+      "predict_active": "shimmering gradient sweep across the button, scanning effect on waveform"
+    },
+    "stars_effect": "Use react-tsparticles or a custom canvas to render slowly drifting, very small opacity particles in the background. It should look like deep space dust or stars."
+  },
+  "layout": {
+    "grid": "Control Room layout: centralized focus for the audio editor. Split panel (Input vs Output) or an overlapping bento box.",
+    "spacing": "Generous: p-8 to p-12 inside cards, gap-8 between elements."
+  },
+  "components": {
+    "record_button": "Massive circular button. When active, glowing red/orange ring with pulsing animation.",
+    "file_upload": "Dashed border zone with glassmorphic center. Hover to reveal drop state with Framer Motion spring expansion.",
+    "metrics_display": "Bento box style: small square widgets for SNR and SI-SDR, using JetBrains Mono for the numbers.",
+    "audio_player": "Custom UI. Do NOT use default `<audio controls>`. Use Shadcn sliders for timeline, custom SVG/Lucide icons for play/pause.",
+    "waveform": "Use a library like `wavesurfer.js` or a custom canvas/SVG visualizer. Make the waveform gradient (Orange to Crimson) to contrast against the dark background."
+  },
+  "media": {
+    "images": [
+      {
+        "category": "hero_background",
+        "url": "https://static.prod-images.emergentagent.com/jobs/d3ef66da-5b58-4ccc-a56f-2ba61ce48655/images/4505f83f0fc3f01e71c5b42ba764d1c9b0eafdba4dc4a44aa8cca5587410c069.png",
+        "description": "Starry dark abstract background for the overall app wrapper. Use with low opacity or mix-blend-mode to achieve the magical stars effect."
+      },
+      {
+        "category": "abstract_sound_art",
+        "url": "https://static.prod-images.emergentagent.com/jobs/d3ef66da-5b58-4ccc-a56f-2ba61ce48655/images/bbebde820bd298661afb76f70c9a5696d70e441c8a690503ba57f2b11c0aa9a9.png",
+        "description": "Glassy soundwave art to be used inside the empty state of the audio player or as a decorative side image."
+      },
+      {
+        "category": "studio_mic_texture",
+        "url": "https://images.unsplash.com/photo-1552174588-6733961c358e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHwxfHxyZWNvcmRpbmclMjBzdHVkaW8lMjBtaWNyb3Bob25lJTIwZGFya3xlbnwwfHx8fDE3NzYwNzU2Mzd8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Black condenser mic on dark background. Good for empty state of the 'Upload/Record' section."
+      }
+    ],
+    "icons": "lucide-react for all standard actions."
+  },
+  "instructions_to_main_agent": [
+    "Install `framer-motion` for spring animations (Apple style).",
+    "Install `lucide-react` for icons.",
+    "Install `react-tsparticles` and `tsparticles` for the 'stars effect' background.",
+    "Use pure Tailwind for layout; build a custom glassmorphic shell for the audio interface.",
+    "For the audio visualization, implement a custom waveform or use `wavesurfer.js`. Customize it to use a gradient matching the accent colors.",
+    "Do not use generic blue/purple UI. Stick to the 'Jewel & Luxury' Apple aesthetic (Space Black + Sunset Orange/Crimson).",
+    "The metrics (SNR, SI-SDR) MUST use JetBrains Mono or a similar monospace font.",
+    "Build a custom HTML/Tailwind audio player. Do NOT use standard <audio controls> as they break the premium vibe.",
+    "Ensure dark/light mode toggle exists in the glassy navbar. Swap colors via Tailwind 'dark:' modifier.",
+    "Ensure all interactive elements have data-testid attributes (e.g., 'record-button', 'upload-dropzone', 'predict-button')."
+  ]
+}
